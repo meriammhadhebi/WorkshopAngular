@@ -1,0 +1,66 @@
+
+	<!-- Home -->
+
+	<div class="home">
+		<div class="background_image" style="background-image:url(../assets/images/blog_page.jpg)"></div>
+		<div class="overlay"></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content">
+							<div class="home_title">Classes</div>
+							<div class="home_subtitle">Pilates, Yoga, Fitness, Spinning & many more</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Blog -->
+
+	<div class="blog" style="margin-top: -300px;">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title_container">
+						<div class="section_subtitle">welcome to Life Time Gym</div>
+						<h1 >Classes</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row blog_row" >
+				
+				<!-- Blog Post -->
+			
+				
+				
+					<div class="blog_post" class="col-xl-6 col-md-7 blog_col" *ngFor="let c of listCours| paginate: { itemsPerPage: 3, currentPage: p[i], id: id  }" >
+						<div class="blog_post_image" [routerLink]="['detail',c.id]">
+                            <img  src="{{c.img}}" alt="" class="image">
+                            <div class="middle">
+                                <div class="text">Class Details</div>
+                            </div>
+                        </div>
+						<div class="blog_post_title" ><a href="#">{{c.Nom}}</a></div>
+						<div class="blog_post_date"><a href="#">{{c.Intensite}}</a></div>
+						<div class="blog_post_text">
+							<p>{{c.Description}}</p>
+						</div>
+						<div class="blog_post_link"><a href="#">Read Moreee</a></div>
+					</div>
+
+					<!-- <div *ngFor="let id of [1]; let i = index;"> -->
+			
+
+			</div>
+			<div class="row">
+			<pagination-controls  (pageChange)="p[i] = $event" [id]="id"></pagination-controls>
+			</div>
+
+		</div>
+
+	</div>
+
+

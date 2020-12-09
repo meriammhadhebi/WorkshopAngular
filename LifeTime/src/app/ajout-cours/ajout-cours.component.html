@@ -1,0 +1,63 @@
+
+	<!-- Home -->
+
+	<div class="home">
+		<div class="background_image" style="background-image:url(../assets/images/blog_page.jpg)"></div>
+		<div class="overlay"></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content">
+							<div class="home_title">Classes</div>
+							<div class="home_subtitle">Pilates, Yoga, Fitness, Spinning & many more</div>
+						</div>
+					</div>
+				</div>
+			</div>
+    </div>
+    
+    <!-- Form -->
+<div class="Blog" style="position: relative;top: 300px;">
+  <div class="container" >
+    <div >
+      <form  #f="ngForm">
+        <div class="form-group">
+          <label>offre Name</label>
+          <input type="text" name="id" class="form-control"  [(ngModel)]="select.Nom" #i="ngModel" required>
+        </div>
+        <div class="alert alert-danger" *ngIf="i.touched && t.invalid" >
+          A Name is required
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" name="title" class="form-control"  [(ngModel)]="select.Description" required minlength="3" #t="ngModel" pattern="[a-zA-Z]+$">
+        </div>
+        <div class="alert alert-danger" *ngIf="t.touched && t.invalid">
+          <div *ngIf="t.errors.required"> description is required</div>
+          <div *ngIf="t.errors.minlength">title minlength is 3</div>
+          <div *ngIf="t.errors.pattern">enter a valid description</div>
+        </div>
+   
+  
+  
+  
+        <div class="form-group">
+          <label>prix </label>
+          <input type="number" name="capacite" class="form-control"  [(ngModel)]="select.capacite" #q="ngModel" required >
+        </div>
+        <div class="alert alert-danger" *ngIf="q.touched && q.invalid">
+          quantity is required
+        </div>
+        <div class="alert alert-danger" *ngIf="q.value<0 ">
+          quantity>0
+        </div>
+        <div style="display: flex; justify-content: space-between;"> 
+        <button class="btn btn-success"  type="submit"   (click)="edit()" >
+          edit cours : {{select|json}}
+        </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

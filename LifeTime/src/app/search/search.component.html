@@ -1,0 +1,108 @@
+<div  *ngIf="recherche !=null" >
+    <div  *ngFor="let c of listCours">
+        <div *ngIf="c.Nom==recherche">
+        <div class="home" >
+            <div class="background_image" style="background-image:url(../assets/images/about_page.jpg)"></div>
+            <div class="overlay"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="home_title">About us</div>
+                                <div class="home_subtitle">Pilates, Yoga, Fitness, Spinning & many more</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- Skills -->
+        <div class="skills">
+            <div class="container" >
+                <div class="row row-lg-eq-height">
+                    
+                    <!-- Extra -->
+                    <div class="col-lg-6">
+                        <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
+                            <div class="background_image" style="background-image:url({{c.img}})"></div>
+                            <div class="button extra_button"><a href="#">Join Now</a></div>
+                        </div>
+                    </div>
+    
+                    <!-- Skills -->
+                    <div class="col-lg-6 skills_col">
+                        <div class="skills_content">
+                            <div class="section_title_container">
+                                <div class="section_subtitle">welcome to Life Time Gym</div>
+                                <div class="section_title">{{c.Nom}}</div>
+                            </div>
+    
+                            <!-- Progress Bars -->
+                            <ul class="progress_bar_container col_12 clearfix">
+                                <li class="pb_item">
+                                    <h5 >Durée De Cours : </h5>
+                                    <div  id="skill_1_pbar" class="skill_bars" data-perc="1.00" data-name="skill_1_pbar">{{c.Duree}}</div>
+                                </li>
+                                <li class="pb_item">
+                                    <h5>Matériel Utilisé : </h5>
+                                    <div id="skill_2_pbar" class="skill_bars" data-perc="0.70" data-name="skill_2_pbar">{{c.Materiel}}</div>
+                                    
+                                </li>
+                                <li class="pb_item">
+                                    <h5>Intensité : </h5>
+                                    <div id="skill_3_pbar" class="skill_bars" data-perc="0.85" data-name="skill_3_pbar">{{c.Intensite}}</div>
+                                    
+                                </li>
+                                <li class="pb_item">
+                                    <h5>Groupes musculaires sollicités : </h5>
+                                    <div id="skill_4_pbar" class="skill_bars" data-perc="0.95" data-name="skill_4_pbar">{{c.grpMusculaire}}</div>
+                                    
+                                </li>
+                                <li class="pb_item">
+                                    <h5>Tenue recommandée : </h5>
+                                    <div id="skill_4_pbar" class="skill_bars" data-perc="0.95" data-name="skill_4_pbar">{{c.tenue}}</div>
+                                    
+                                </li>
+                            </ul>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Description -->
+        <div class="desc">
+            <div class="container" >
+                <div class="row row-lg-eq-height">
+                <div class="col-lg-6 col-sm-12 ">
+                    <h5 class="section_title">Pour qui ?</h5>
+                    <div class="desc_text">
+                        {{c.Audiance}} Tout le monde
+                        atgvnjnfgkdfnjbjkhrvujdhifeje
+                        egyfhydrgfhuhrdifjoekdojegorjog
+                        ydfxvhnjckisjcikdjvoljffvojfvk
+                    </div>
+                </div>
+                <div class=" col-lg-6 col-sm-12">
+                    <h5 class="section_title">Fréquence</h5>
+                    <div class="desc_text">
+                        {{c.Frequence}} 2a 3 fois par semaine 
+                        atgvnjnfgkdfnjbjkhrvujdhifeje
+                        egyfhydrgfhuhrdifjoekdojegorjog
+                        ydfxvhnjckisjcikdjvoljffvojfvk
+                    </div>
+                </div>
+                <div class="col-12">
+                    <h5 class="section_title">Description</h5>
+                    <div class="desc_text">{{c.Description}}</div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    

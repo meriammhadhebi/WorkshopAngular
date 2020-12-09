@@ -1,0 +1,59 @@
+{
+  "cours": [
+    {
+      "id" : 1,
+      "Nom" : "Body Pump" ,
+      "Duree" : "1h30" ,
+      "Description" : "Le BodyPump est un cours de fitness à vocation de renforcement musculaire complet, pré-chorégraphié et en musique faisant partie du concept Body Training System" ,
+      "capacite" : 20 ,
+      "Intensite" : "Hard",
+      "img" : "../assets/images/blog_7.jpg"
+    },
+    {
+      "id" : 2,
+      "Nom" : "Yoga" ,
+      "Duree" : "1h" ,
+      "Description" : "Le BodyPump est un cours de fitness à vocation de renforcement musculaire complet, pré-chorégraphié et en musique faisant partie du concept Body Training System" ,
+      "capacite" : 20  ,
+      "Intensite" : "Easy",
+      "img" : "../assets/images/blog_8.jpg"
+    },
+    {
+      "id" : 3,
+      "Nom" : "Box" ,
+      "Duree" : "1h30" ,
+      "Description" : "Le BodyPump est un cours de fitness à vocation de renforcement musculaire complet, pré-chorégraphié et en musique faisant partie du concept Body Training System" ,
+      "capacite" : 20 ,
+      "Intensite" : "Hard",
+      "img" : "../assets/images/blog_4.jpg"
+    },
+    {
+      "id" : 4,
+      "Nom" : "Pilates" ,
+      "Duree" : "1h30" ,
+      "Description" : "Le BodyPump est un cours de fitness à vocation de renforcement musculaire complet, pré-chorégraphié et en musique faisant partie du concept Body Training System" ,
+      "capacite" : 20 ,
+      "Intensite" : "Hard",
+      "img" : "../assets/images/blog_5.jpg"
+    },
+    {
+      "id" : 5,
+      "Nom" : "Cardio" ,
+      "Duree" : "1h30" ,
+      "Description" : "Le BodyPump est un cours de fitness à vocation de renforcement musculaire complet, pré-chorégraphié et en musique faisant partie du concept Body Training System" ,
+      "capacite" : 20 ,
+      "Intensite" : "Hard",
+      "img" : "../assets/images/blog_6.jpg"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

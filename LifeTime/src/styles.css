@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "./assets/styles/bootstrap-4.1.2/bootstrap.min.css";
+@import "./assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css";
+@import "./assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css";
+@import "./assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css";
+@import "./assets/plugins/OwlCarousel2-2.2.1/animate.css";
+@import "./assets/plugins/colorbox/colorbox.css";
+@import "./assets/styles/main_styles.css";
+@import "./assets/styles/responsive.css";
+@import"./assets/styles/about.css";
+@import"./assets/styles/about_responsive.css";
+
