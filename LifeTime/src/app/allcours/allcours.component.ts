@@ -17,5 +17,11 @@ export class AllcoursComponent implements OnInit {
       (data: Cours[]) => this.listCours = data
     );
   }
+  delete(id) {
+    this.service.deleteCours(id).subscribe(
+      () => this.listCours = this.listCours.filter(cours => cours.id != id)
+    );
+
+  }
 
 }

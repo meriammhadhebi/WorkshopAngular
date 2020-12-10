@@ -36,7 +36,7 @@
 			
 				
 				
-					<div class="blog_post" class="col-xl-6 col-md-7 blog_col" *ngFor="let c of listCours| paginate: { itemsPerPage: 3, currentPage: p[i], id: id  }" >
+					<div class="blog_post" class="col-xl-6 col-md-7 blog_col" *ngFor="let id of [1] ; let i = index ; let c of listCours| paginate: { itemsPerPage: 3, currentPage: p[i], id: id  }" >
 						<div class="blog_post_image" [routerLink]="['detail',c.id]">
                             <img  src="{{c.img}}" alt="" class="image">
                             <div class="middle">
@@ -56,7 +56,9 @@
 
 			</div>
 			<div class="row">
+				<div *ngFor="let id of [1]; let i = index;">
 			<pagination-controls  (pageChange)="p[i] = $event" [id]="id"></pagination-controls>
+		        </div>
 			</div>
 
 		</div>

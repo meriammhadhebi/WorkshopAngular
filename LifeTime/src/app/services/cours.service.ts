@@ -15,12 +15,15 @@ export class CoursService {
     return this.http.get<Cours[]>(this.url);
   }
   putCours(c: Cours) {
-    return this.http.put(this.url, c);
+    return this.http.put(this.url + c.id , c );
   }
   searchCours(id) {
     return this.http.get(this.url + id);
   }
   deleteCours(id) {
     return this.http.delete(this.url + id);
+  }
+  addCours(c: Cours) {
+    return this.http.post(this.url, c);
   }
 }

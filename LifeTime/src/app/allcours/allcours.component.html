@@ -1,13 +1,13 @@
 <div class="row" style="margin: 200px;" > 
     <div class="col-md-12" > 
+      <a [routerLink]="['addcours','add']">Add New Course</a>
         <br>
-        <div class="movie"    >
            <table class="table">
                <thead>
                  <tr>
                    <th scope="col">Name</th>
                    <th scope="col">description</th>
-                   <th scope="col">price</th>
+                   <th scope="col">Intensité</th>
 
                    <th scope="col">Edit </th>
                    <th scope="col">Delete </th>
@@ -17,20 +17,19 @@
                </thead>
                <tbody *ngFor="let c of listCours" >
                   <tr>
-                  <td>{{c.Nom}}</td>
+                  <td>{{c.nom}}</td>
                    <td>{{c.Description}}</td>
                    <td>{{c.Intensite}}</td>
                    <td>
-                   <button  class="btn btn-primary"  [routerLink]="['editcours',c.id]" >Edit </button>
+                   <button  class="btn btn-primary"  [routerLink]="['editcours',c.id,'edit']" >Edit </button>
                    </td>
                    <td>
-                   <button  class="btn btn-primary" (click)="delete()" >Delete </button>
+                   <button  class="btn btn-primary" (click)="delete(c.id)" >Delete </button>
                    </td>
                   </tr>
                </tbody>
 
            </table>
-        </div>
 
      </div>
      </div>

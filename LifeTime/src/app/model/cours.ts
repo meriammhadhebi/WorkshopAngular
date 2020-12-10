@@ -3,7 +3,7 @@ import { entraineur } from './entraineur';
 export class Cours
 {
 id:number;
-Nom : string ;
+nom : string ;
 Duree : string ;
 Audiance : string ;
 Frequence : string ;
