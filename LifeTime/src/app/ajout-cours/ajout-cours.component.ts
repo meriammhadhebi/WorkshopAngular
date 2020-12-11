@@ -24,7 +24,7 @@ export class AjoutCoursComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.cours=new Cours()
+    this.select=new Cours()
     this.val = this.ServiceRoute.snapshot.params.val;
     this.id = this.ServiceRoute.snapshot.params.id;
     this.registerForm = new FormGroup({
@@ -54,8 +54,8 @@ export class AjoutCoursComponent implements OnInit {
     }
     else
     {
-      this.service.addCours(this.select).subscribe(
-        () => this.listCours = [this.select, ...this.listCours]
+      this.service.addCours(this.registerForm.value).subscribe(
+        () => this.listCours = [this.registerForm.value, ...this.listCours]
       );
     }
   }

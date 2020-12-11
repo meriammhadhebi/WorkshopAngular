@@ -10,6 +10,7 @@ import { CoursService } from '../services/cours.service';
 export class AllcoursComponent implements OnInit {
 
   listCours : Cours[];
+  search : string;
   constructor(private service : CoursService) { }
 
   ngOnInit(): void {

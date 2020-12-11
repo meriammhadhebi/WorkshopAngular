@@ -12,6 +12,7 @@ export class CoursComponent implements OnInit {
   listCours : Cours[];
   p: number[] = [];
   i : number ;
+  id : number ;
   constructor(private service : CoursService) { }
 
   ngOnInit(): void {
