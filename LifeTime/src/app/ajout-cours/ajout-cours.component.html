@@ -1,54 +1,58 @@
+<!-- Form -->
+<div class="Blog container" style="position: relative;top: 200px;">
+    <h1>{{val}} Course</h1>
 
-    <!-- Form -->
-<div class="Blog" style="position: relative;top: 200px;">
-  <h1>{{val}}  Course</h1>
+    <form class="row" [formGroup]=registerForm>
+        <div class="form-group col-xl-6 col-md-6">
+            <label>Name : </label>
+            <input type="text" formControlName="nom" class="form-control" [(ngModel)]="select.nom">
 
-<form [formGroup]=registerForm>
-    <div class="form-group">
-        <label>Name : </label>
-        <input type="text" formControlName="nom" class="form-control" [(ngModel)]="select.nom">
-        
-        <div class="alert alert-danger" *ngIf="nom.errors && nom.touched ">
-            <div>  the Name is required!</div>
+            <div class="alert alert-danger" *ngIf="nom.errors && nom.touched ">
+                <div> the Name is required!</div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label>Description : </label>
-        <input type="text" formControlName="Description" class="form-control" [(ngModel)]="select.Description">
-        
-        <div class="alert alert-danger" *ngIf="Description.errors && Description.touched ">
-            <div *ngIf="Description.errors.required">  the Description is required!</div>
+        <div class="form-group col-xl-6 col-md-6">
+            <label>Description : </label>
+            <input type="text" formControlName="Description" class="form-control" [(ngModel)]="select.Description">
+
+            <div class="alert alert-danger" *ngIf="Description.errors && Description.touched ">
+                <div *ngIf="Description.errors.required"> the Description is required!</div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <select formControlName="Intensite" class="custom-select" [(ngModel)]="select.Intensite">
-            <option value="" disabled>Intensite</option>
-            <option *ngFor="let Intensite of listintensite" [ngValue]="Intensite">{{Intensite}}</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label>capacite : </label>
-        <input type="text" formControlName="capacite" class="form-control" [(ngModel)]="select.capacite">
-        
-        <div class="alert alert-danger" *ngIf="capacite.errors && capacite.touched ">
-            <div *ngIf="capacite.errors.required">  the capacite is required!</div>
+        <div class="form-group col-xl-6 col-md-6">
+            <label>Intensite : </label>
+            <select formControlName="Intensite" class="custom-select" [(ngModel)]="select.Intensite">
+                <option value="" disabled>Intensite</option>
+                <option *ngFor="let Intensite of listintensite" [ngValue]="Intensite">{{Intensite}}</option>
+            </select>
         </div>
-    </div>
-    <div class="form-group">
-        <label>image : </label>
-        <input #imageInput type="file" accept="image/*" formControlName="img" class="form-control" [(ngModel)]="select.img">
-        <img *ngIf="val=='edit'" src="{{select.img}}" alt="" border="3" height="100" width="100" />
-        <div class="alert alert-danger" *ngIf="capacite.errors && capacite.touched ">
-            <div *ngIf="capacite.errors.required">  the image is required!</div>
+        <div class="form-group col-xl-6 col-md-6">
+            <label>capacite : </label>
+            <input type="text" formControlName="capacite" class="form-control" [(ngModel)]="select.capacite">
+
+            <div class="alert alert-danger" *ngIf="capacite.errors && capacite.touched ">
+                <div *ngIf="capacite.errors.required"> the capacite is required!</div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <select formControlName="entraineur" class="custom-select"  [(ngModel)]="select.entraineur">
-            <option value="" disabled>entraineur</option>
-            <option *ngFor="let entraineur of listentraineur" [ngValue]="entraineur">{{entraineur.nom}}  {{entraineur.prenom}}</option>
-         </select>
-    </div>
-    <button class="btn btn-success"  type="submit"   (click)="save()" >{{val}}</button>
-</form>
-<p style="margin:200px"> </p>
+        <div class="form-group col-xl-6 col-md-6">
+            <label>image : </label>
+            <input #imageInput type="file" accept="image/*" formControlName="img" class="form-control"
+                [(ngModel)]="select.img">
+            <img *ngIf="val=='edit'" style="height: auto; width: 30%" [src]="sanitizeImageUrl(select.img.toString())"
+                alt="cours" />
+            <div class="alert alert-danger" *ngIf="capacite.errors && capacite.touched ">
+                <div *ngIf="capacite.errors.required"> the image is required!</div>
+            </div>
+        </div>
+        <div class="form-group col-xl-6 col-md-6">
+            <label>Entraineur : </label>
+            <select formControlName="entraineur" class="custom-select"  [(ngModel)]="select.entraineur">
+                <option value="" disabled>entraineur</option>
+                <option *ngFor="let entraineur of listentraineur" [ngValue]="entraineur">{{entraineur.nom}}
+                    {{entraineur.prenom}}</option>
+            </select>
+        </div>
+        <button class="button extra_button" style="width: 20%; margin-left: 460px;margin-bottom: 50px;"  type="submit" (click)="save()">{{val}}</button>
+    </form>
+    <p style="margin:200px"> </p>
 </div>

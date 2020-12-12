@@ -12,12 +12,14 @@
 <div class="super_container">
 	
 	<!-- Header -->
-
 	<header class="header">
 	
 		<div class="container">
+			<div>
+				<app-login></app-login>
+			</div>
 			<!-- Search form -->
-			<div class="md-form mt-0 large">
+			<div style="position: relative;top: -50px;" class="md-form mt-0 large">
 				<input class="form-control" type="text" placeholder="Search" aria-label="Search" name="search" [(ngModel)]="search" >
 			</div>
 			<div class="row">
@@ -30,9 +32,8 @@
 							<ul class="d-flex flex-row align-items-center justify-content-start">
 								<li><a class="active" routerLink="/home">Home</a></li>
 			        	       <li><a routerLink="/cours">Classes </a></li>
-								<li><a href="about.html">About us</a></li>
-								<li><a href="blog.html">Blog</a></li>
-								<li><a href="contact.html">Contact</a></li>
+								<li><a href="/about">About us</a></li>
+								<li><a href="/contact">Contact</a></li>
 							</ul>
 						</nav>
 						<div class="phone d-flex flex-row align-items-center justify-content-start ml-auto">
@@ -71,7 +72,6 @@
 				<li><a routerLink="/home">Home</a></li>
 				<li><a routerLink="/cours">Classes </a></li>
 				<li><a href="about.html">About us</a></li>
-				<li><a href="blog.html">Blog</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</div>
@@ -105,7 +105,6 @@
 									<li><a href="index.html">Home</a></li>
 									<li><a href="about.html">About us</a></li>
 									<li><a href="services.html">Classes</a></li>
-									<li><a href="blog.html">Blog</a></li>
 									<li><a href="contact.html">Contact</a></li>
 								</ul>
 							</nav>

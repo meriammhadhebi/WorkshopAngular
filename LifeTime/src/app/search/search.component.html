@@ -1,6 +1,6 @@
 <div  *ngIf="recherche !=null" >
     <div  *ngFor="let c of listCours">
-        <div *ngIf="c.Nom==recherche">
+        <div *ngIf="c.nom==recherche">
         <div class="home" >
             <div class="background_image" style="background-image:url(../assets/images/about_page.jpg)"></div>
             <div class="overlay"></div>
@@ -27,7 +27,8 @@
                     <!-- Extra -->
                     <div class="col-lg-6">
                         <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
-                            <div class="background_image" style="background-image:url({{c.img}})"></div>
+                            <img class="image background_image" 
+                            [src]="sanitizeImageUrl(c.img.toString())" alt="cours" />
                             <div class="button extra_button"><a href="#">Join Now</a></div>
                         </div>
                     </div>

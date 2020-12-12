@@ -3,7 +3,7 @@
   
   <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="search" [(ngModel)]="search" >
     <div class="col-md-12" > 
-      <a [routerLink]="['addcours','add']">Add New Course</a>
+      <a [routerLink]="['addcours','Add']">Add New Course</a>
         <br>
            <table class="table">
                <thead>
@@ -24,7 +24,7 @@
                    <td>{{c.Description}}</td>
                    <td>{{c.Intensite}}</td>
                    <td>
-                   <button  class="btn btn-primary"  [routerLink]="['editcours',c.id,'edit']" >Edit </button>
+                   <button  class="btn btn-primary"  [routerLink]="['editcours',c.id,'Edit']" >Edit </button>
                    </td>
                    <td>
                    <button  class="btn btn-primary" (click)="delete(c.id)" >Delete </button>

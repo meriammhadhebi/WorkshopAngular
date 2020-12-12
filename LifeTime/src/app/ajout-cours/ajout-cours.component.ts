@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EntraineurService } from '../services/entraineur.service';
 import { entraineur } from '../model/entraineur';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajout-cours',
@@ -22,7 +24,7 @@ export class AjoutCoursComponent implements OnInit {
   listintensite: any = ['Hard', 'Medium', 'Easy'];
   
 
-  constructor(private service : CoursService,private ServiceRoute: ActivatedRoute,private serviceentraineur:EntraineurService) {
+  constructor(private service : CoursService,private ServiceRoute: ActivatedRoute,private serviceentraineur:EntraineurService,private sanitizer:DomSanitizer,private router:Router) {
     
     this.ServiceRoute.queryParams.subscribe(params => { this.val = params['val']; });
     this.ServiceRoute.queryParams.subscribe(params => { this.id = params['id']; });
@@ -72,6 +74,10 @@ export class AjoutCoursComponent implements OnInit {
         () => this.listCours = [this.registerForm.value, ...this.listCours]
       );
     }
+    this.router.navigateByUrl('/allcours');
+  }
+  sanitizeImageUrl(imageUrl: string): SafeUrl {
+  return this.sanitizer.bypassSecurityTrustUrl( "assets/images/"+imageUrl.substring(12));
   }
   
 

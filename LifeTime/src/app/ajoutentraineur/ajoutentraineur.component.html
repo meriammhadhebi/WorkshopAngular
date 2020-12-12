@@ -1,28 +1,10 @@
 
-	<!-- Home -->
-
-	<div class="home">
-		<div class="background_image" style="background-image:url(../assets/images/blog_page.jpg)"></div>
-		<div class="overlay"></div>
-		<div class="home_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="home_content">
-							<div class="home_title">Classes</div>
-							<div class="home_subtitle">Pilates, Yoga, Fitness, Spinning & many more</div>
-						</div>
-					</div>
-				</div>
-			</div>
-    </div>
-    
     <!-- Form -->
-<div class="Blog" style="position: relative;top: 300px;">
+<div class="Blog" style="margin:200px;">
   <div class="container" >
-    <div >
+    <div class="row">
       <form  #f="ngForm">
-        <div class="form-group">
+        <div class="form-group ">
           <label>FirstName</label>
           <input type="text" name="id" class="form-control"  [(ngModel)]="select.nom" #i="ngModel" required>
         </div>
@@ -38,19 +20,24 @@
           <div *ngIf="t.errors.minlength">title minlength is 3</div>
           <div *ngIf="t.errors.pattern">enter a valid description</div>
         </div>
-   
-  
-  
-  
         <div class="form-group">
           <label>phone </label>
-          <input type="number" name="capacite" class="form-control"  [(ngModel)]="select.phone" #q="ngModel" required >
+          <input type="number" name="phone" class="form-control"  [(ngModel)]="select.phone" #q="ngModel" required >
         </div>
         <div class="alert alert-danger" *ngIf="q.touched && q.invalid">
           quantity is required
         </div>
         <div class="alert alert-danger" *ngIf="q.value<0 ">
           quantity>0
+        </div>
+        <div class="form-group">
+          <label>image </label>
+          <input #imageInput type="file" accept="image/*" name="img" class="form-control"  [(ngModel)]="select.img" #p="ngModel" required>
+          <img *ngIf="val=='edit'" style="height: auto; width: 30%" [src]="sanitizeImageUrl(select.img.toString())"
+                alt="Game 1" />
+        </div>
+        <div class="alert alert-danger" *ngIf="p.touched && p.invalid">
+          image is required
         </div>
         <div style="display: flex; justify-content: space-between;"> 
         <button class="btn btn-success"  type="submit"   (click)="save()" >

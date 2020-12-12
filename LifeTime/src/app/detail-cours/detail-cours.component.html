@@ -25,7 +25,8 @@
 				<!-- Extra -->
 				<div class="col-lg-6">
 					<div class="extra d-flex flex-column align-items-center justify-content-center text-center">
-						<div class="background_image" style="background-image:url({{c.img}})"></div>
+						<img class="image background_image" 
+						[src]="sanitizeImageUrl(c.img.toString())" alt="Game 1" />
 						<div class="button extra_button"><a href="#">Join Now</a></div>
 					</div>
 				</div>

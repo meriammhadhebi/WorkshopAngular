@@ -1,0 +1,53 @@
+<div class="container">
+<div class="section_title">
+    Calculate your BMI
+</div>
+<p class="test_content">calculate your BMI and discover your best weight!</p>
+<div class="row">
+<form  class="col-xl-6 col-md-7 w3-container" [formGroup]=registerForm>
+    <div style="width: 70%;">
+        <label>Height : </label>
+        <input type="text" formControlName="Taille" class="form-control" placeholder="Height/cm" [(ngModel)]="taille">
+
+        <div class="alert alert-danger" *ngIf="Taille.errors && Taille.touched ">
+            <div> the Height is required!</div>
+        </div>
+    </div>
+    <div style="width: 70%;">
+        <label>Weight : </label>
+        <input type="text" formControlName="Poids" class="form-control" placeholder="Weight/kg" [(ngModel)]="poids">
+
+        <div class="alert alert-danger" *ngIf="Poids.errors && Poids.touched ">
+            <div> the Weight is required!</div>
+        </div>
+    </div>
+    <div style="width: 70%;">
+        <label>Age : </label>
+        <input type="text" formControlName="Age" class="form-control" placeholder="Age" [(ngModel)]="age">
+
+        <div class="alert alert-danger" *ngIf="Age.errors && Age.touched ">
+            <div> the age is required!</div>
+        </div>
+    </div>
+    <div style="width: 70%;">
+        <label>sexe : </label>
+        <select class="w3-selec form-control" name="sexe" formControlName="sexe"  style="width:100%;" [(ngModel)]="gender"><br>
+            <option value="" disabled selected>sexe</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+        </select>
+        <div class="alert alert-danger" *ngIf="sexe.errors && sexe.touched ">
+            <div> the gender is required!</div>
+        </div>
+    </div>
+
+<div class="button extra_button" style="position: relative;top: -10px"><a style="color: white;" (click)="sendNotif()">Calculate</a></div>
+</form>
+<!-----Reponse---->
+<div *ngIf="IMC != 0"  class="col-xl-6 col-md-7 " style="position: relative;top: 50px;"  >
+<h5 [ngStyle]="{'color':getColor()}" >Your BMI is {{IMC}}</h5>
+<p style="color: white;">{{msg}}</p>
+
+</div>
+</div>
+</div>

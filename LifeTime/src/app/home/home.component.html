@@ -89,9 +89,8 @@
 							<div class="section_subtitle">welcome to Life Time Gym</div>
 							<div class="section_title">About <span>Life Time Gym</span></div>
 						</div>
-						<div class="text_highlight">Etiam commodo justo nec aliquam feugiat. Donec a leo eget eget augue porttitor sollicitudin augue porttitor sollicitudin.</div>
 						<div class="about_text">
-							<p>Morbi sed varius risus, vitae molestie lectus. Donec id hendrerit velit, eu fringilla neque. Etiam id finibus sapien. Donec sollicitudin luctus ex non pharetra. Aenean lobortis ut leo vel porta. Maecenas ac vestibulum lectus. Cras nulla urna, lacinia ut tempor facilisis, congue dignissim tellus. Maecenas ac vestibulum lectus. Cras nulla urna, lacinia ut tempor facilisis, congue dignissim tellus. Phasellus sit amet justo ullamcorper, elementum ipsum nec.</p>
+							<p>Lifee Time is the premiere, athletic-based, Strength & Conditioning training facility aimed at unleashing the inner athlete in everyone. Sessions are team-oriented, competitive, fun, and supportive, guaranteeing optimal fitness results. Whether you’re an elite athlete, or just want to train like one, Tone House’s goal is to bring sports conditioning workouts to the mainstream and help individuals improve their mental and physical health and become better overall athletes and people.</p>
 						</div>
 					</div>
 				</div>
@@ -110,27 +109,7 @@
 
 	<!-- Testimonials -->
    <div class="testimonials">
-	   <div class="section_title">
-			Calculer Votre IMC
-	   </div>
-	   <p class="test_content">Calculez votre indice de masse corporel (IMC) et découvrez votre poids idéal !</p>
-	   <form class="w3-container">
-		<input class="w3-input w3-animate-input" type="text" style="width:30%" placeholder="Taille/cm"><br>
-		<input class="w3-input w3-border w3-animate-input" type="text" style="width:30%" placeholder="Poids/kg"><br>
-		<input class="w3-input w3-border w3-animate-input" type="text" style="width:30%" placeholder="Age"><br>
-		<select class="w3-select w3-input w3-border w3-animate-input" name="sexe" style="width:30%"><br>
-			<option value="" disabled selected>sexe</option>
-			<option value="1">Male</option>
-			<option value="2">Female</option>
-		</select>
-		<select class="w3-select w3-input w3-border w3-animate-input" name="Facteur D'activité" style="width:30%"><br>
-			<option value="" disabled selected>Facteur D'activité</option>
-			<option value="1">Peu ou pas d'exercice / travail de bureau</option>
-			<option value="2">Exercices légers, sport de 1 à 3 jours par semaine</option>
-			<option value="3">Exercice modéré, sport de 3 à 5 jours par semaine</option>
-		</select>
-		<div class="button extra_button" style="position: relative;top: -10px"><a href="#">Calculer</a></div>
-	    </form>
+	   <app-calcul-imc (notif)="calculate()"></app-calcul-imc>
    </div>
 
 

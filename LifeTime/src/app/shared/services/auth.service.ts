@@ -8,7 +8,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { User } from 'src/app/shared/services/user';
+import { User } from '../services/user';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +43,7 @@ export class AuthService {
     private updateUserData(user) {
       // Sets user data to firestore on login
       const userRef: AngularFirestoreDocument<User> = this.afs.doc('users/${user.uid}');
-  
+
 
       const data = { 
         uid: user.uid, 
@@ -51,9 +51,9 @@ export class AuthService {
         displayName: user.displayName, 
         photoURL: user.photoURL
       } 
-  
+
       return userRef.set(data, { merge: true })
-  
+
     }
     async signOut() {
       await this.afAuth.signOut();

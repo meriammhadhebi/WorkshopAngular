@@ -21,6 +21,10 @@ import { SearchComponent } from './search/search.component';
 import { AllcoursComponent } from './allcours/allcours.component';
 import { AllentraineurComponent } from './allentraineur/allentraineur.component';
 import { AjoutentraineurComponent } from './ajoutentraineur/ajoutentraineur.component';
+import { LoginComponent } from './login/login.component';
+import { CalculIMCComponent } from './calcul-imc/calcul-imc.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { AjoutentraineurComponent } from './ajoutentraineur/ajoutentraineur.comp
     SearchComponent,
     AllcoursComponent,
     AllentraineurComponent,
-    AjoutentraineurComponent
+    AjoutentraineurComponent,
+    LoginComponent,
+    CalculIMCComponent,
+    AboutusComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
