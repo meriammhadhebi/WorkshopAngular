@@ -3,6 +3,8 @@ import { Cours } from '../model/cours';
 import { CoursService } from '../services/cours.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { EntraineurService } from '../services/entraineur.service';
+import { entraineur } from '../model/entraineur';
 
 @Component({
   selector: 'app-ajout-cours',
@@ -16,8 +18,11 @@ export class AjoutCoursComponent implements OnInit {
   cours : Cours;
   listCours : Cours[];
   registerForm : FormGroup;
+  listentraineur : entraineur[];
+  listintensite: any = ['Hard', 'Medium', 'Easy'];
+  
 
-  constructor(private service : CoursService,private ServiceRoute: ActivatedRoute) {
+  constructor(private service : CoursService,private ServiceRoute: ActivatedRoute,private serviceentraineur:EntraineurService) {
     
     this.ServiceRoute.queryParams.subscribe(params => { this.val = params['val']; });
     this.ServiceRoute.queryParams.subscribe(params => { this.id = params['id']; });
@@ -27,10 +32,16 @@ export class AjoutCoursComponent implements OnInit {
     this.select=new Cours()
     this.val = this.ServiceRoute.snapshot.params.val;
     this.id = this.ServiceRoute.snapshot.params.id;
+    this.serviceentraineur.getentraineur().subscribe(
+      (data: entraineur[]) => this.listentraineur = data
+    );
     this.registerForm = new FormGroup({
       nom : new FormControl('',[Validators.required]),
       Description : new FormControl('',[Validators.required]),
-      capacite : new FormControl('',[Validators.required])
+      capacite : new FormControl('',[Validators.required]),
+      entraineur : new FormControl('',[Validators.required]),
+      img : new FormControl('',[Validators.required]),
+      Intensite : new FormControl('',[Validators.required]),
     });
     this.service.searchCours(this.id).subscribe(
       (select: Cours) => this.select = select
@@ -43,6 +54,9 @@ export class AjoutCoursComponent implements OnInit {
   get nom(){return this.registerForm.get('nom');}
   get Description(){return this.registerForm.get('Description');}
   get capacite(){return this.registerForm.get('capacite');}
+  get entraineur(){return this.registerForm.get('entraineur');}
+  get img(){return this.registerForm.get('img');}
+  get Intensite(){return this.registerForm.get('Intensite');}
   get form(){return this.registerForm;}
 
   save(){
@@ -59,5 +73,6 @@ export class AjoutCoursComponent implements OnInit {
       );
     }
   }
+  
 
 }

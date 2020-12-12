@@ -1,24 +1,6 @@
 
-	<!-- Home -->
-
-	<div class="home">
-		<div class="background_image" style="background-image:url(../assets/images/blog_page.jpg)"></div>
-		<div class="overlay"></div>
-		<div class="home_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="home_content">
-							<div class="home_title">Classes</div>
-							<div class="home_subtitle">Pilates, Yoga, Fitness, Spinning & many more</div>
-						</div>
-					</div>
-				</div>
-			</div>
-    </div>
-    
     <!-- Form -->
-<div class="Blog" style="position: relative;top: 300px;">
+<div class="Blog" style="position: relative;top: 200px;">
   <h1>{{val}}  Course</h1>
 
 <form [formGroup]=registerForm>
@@ -39,6 +21,12 @@
         </div>
     </div>
     <div class="form-group">
+        <select formControlName="Intensite" class="custom-select" [(ngModel)]="select.Intensite">
+            <option value="" disabled>Intensite</option>
+            <option *ngFor="let Intensite of listintensite" [ngValue]="Intensite">{{Intensite}}</option>
+        </select>
+    </div>
+    <div class="form-group">
         <label>capacite : </label>
         <input type="text" formControlName="capacite" class="form-control" [(ngModel)]="select.capacite">
         
@@ -46,8 +34,21 @@
             <div *ngIf="capacite.errors.required">  the capacite is required!</div>
         </div>
     </div>
+    <div class="form-group">
+        <label>image : </label>
+        <input #imageInput type="file" accept="image/*" formControlName="img" class="form-control" [(ngModel)]="select.img">
+        <img *ngIf="val=='edit'" src="{{select.img}}" alt="" border="3" height="100" width="100" />
+        <div class="alert alert-danger" *ngIf="capacite.errors && capacite.touched ">
+            <div *ngIf="capacite.errors.required">  the image is required!</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <select formControlName="entraineur" class="custom-select"  [(ngModel)]="select.entraineur">
+            <option value="" disabled>entraineur</option>
+            <option *ngFor="let entraineur of listentraineur" [ngValue]="entraineur">{{entraineur.nom}}  {{entraineur.prenom}}</option>
+         </select>
+    </div>
     <button class="btn btn-success"  type="submit"   (click)="save()" >{{val}}</button>
 </form>
-<p>status : {{registerForm.status}} </p>
-<p>value : {{registerForm.value|json}} </p>
+<p style="margin:200px"> </p>
 </div>
