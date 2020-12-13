@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { entraineur } from '../model/entraineur';
 import { EntraineurService } from '../services/entraineur.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
@@ -16,7 +16,7 @@ export class AjoutentraineurComponent implements OnInit {
   @Input() select : entraineur ;
   entraineur : entraineur;
   listEntraineur : entraineur[];
-  constructor(private service : EntraineurService,private ServiceRoute: ActivatedRoute,private sanitizer:DomSanitizer) {
+  constructor(private service : EntraineurService,private ServiceRoute: ActivatedRoute,private sanitizer:DomSanitizer,private router:Router) {
     
     this.ServiceRoute.queryParams.subscribe(params => { this.val = params['val']; });
     this.ServiceRoute.queryParams.subscribe(params => { this.id = params['id']; });
@@ -34,18 +34,19 @@ export class AjoutentraineurComponent implements OnInit {
     );
   }
   save(){
-    if (this.val === 'edit')
+    if (this.val === 'Edit')
     {
     this.service.putentraineur(this.select).subscribe(
       ()=> console.log(this.select)
     );
     }
-    else
+    else(this.val === 'Add')
     {
       this.service.addentraineur(this.select).subscribe(
         () => this.listEntraineur = [this.select, ...this.listEntraineur]
       );
     }
+    this.router.navigateByUrl('/allentraineur');
   }
   sanitizeImageUrl(imageUrl: string): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl("assets/images/" + imageUrl.substring(12));

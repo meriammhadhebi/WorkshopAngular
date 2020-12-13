@@ -2,6 +2,7 @@ import { Component, OnInit, Input,Output,EventEmitter} from '@angular/core';
 import { Cours } from '../model/cours';
 import { CoursService } from '../services/cours.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { reduce } from 'rxjs/operators';
 
 @Component({
   selector: 'app-allcours',
@@ -34,5 +35,19 @@ export class AllcoursComponent implements OnInit {
     this.listsearch= this.service.SearchMultiple(this.listCours,'nom',this.search);
     console.log(this.listsearch);
   }
-
+  getColor(c)
+  {
+      if (c.Intensite=="Hard")
+      {
+        return 'red';
+      }
+      else if (c.Intensite=="Medium")
+      {
+        return 'orange';
+      }
+      else if (c.Intensite=="Easy")
+      {
+        return 'green';
+      }
+  }
 }

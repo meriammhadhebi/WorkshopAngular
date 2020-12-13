@@ -17,21 +17,24 @@
 
         </tr>
       </thead>
-        <tbody *ngFor="let c of listCours">
-          <tr>
-            <td>{{c.nom}}</td>
-            <td>{{c.Description}}</td>
-            <td>{{c.Intensite}}</td>
-            <td>
-              <button class="btn btn-primary" [routerLink]="['editcours',c.id,'Edit']">Edit </button>
-            </td>
-            <td>
-              <button class="btn btn-primary" (click)="delete(c.id)">Delete </button>
-            </td>
-          </tr>
-        </tbody>
+      <tbody *ngFor="let c of listCours" >
+        <tr>
+          <td>{{c.nom}}</td>
+          <td>{{c.Description}}</td>
+          <td  [ngStyle]="{'color':getColor(c)}">{{c.Intensite}}</td>
+          <td>
+            <button class="btn btn-primary" [routerLink]="['editcours',c.id,'Edit']">Edit </button>
+          </td>
+          <td>
+            <button class="btn btn-primary" (click)="delete(c.id)">Delete </button>
+          </td>
+        </tr>
+      </tbody>
 
     </table>
 
+  </div>
+  <div class="row" style="left: 1000px;">
+    <a routerLink="/allentraineur">>>Coches List</a>
   </div>
 </div>

@@ -21,24 +21,25 @@
         </div>
         <div class="form-group col-xl-6 col-md-6">
           <label>phone </label>
-          <input type="number" name="phone" class="form-control"  [(ngModel)]="select.phone" #q="ngModel" required minlength="8" maxlength="8"  >
+          <input type="number" name="phone" class="form-control"  [(ngModel)]="select.phone" #q="ngModel" required minlength="8"  >
         </div>
         <div class="alert alert-danger" *ngIf="q.touched && q.invalid">
           <div *ngIf="q.errors.required">phone is required</div>
-          <div *ngIf="q.errors.minlength">phone length is 8</div>
-          <div *ngIf="q.errors.maxlength">phone length is 8</div>
+        </div>
+        <div class="alert alert-danger" *ngIf="q.minlength<8 ">
+          phone length is 8
         </div>
         <div class="form-group col-xl-6 col-md-6">
           <label>image </label>
-          <input #imageInput type="file" accept="image/*" name="img" class="form-control"  [(ngModel)]="select.img" #p="ngModel" required>
-          <img *ngIf="val=='edit'" style="height: auto; width: 30%" [src]="sanitizeImageUrl(select.img.toString())"
+          <input  #imageInput type="file" accept="image/*" name="img" class="form-control"  [(ngModel)]="select.img" #p="ngModel" required>
+          <img *ngIf="val=='Edit'" style="height: auto; width: 30%" [src]="sanitizeImageUrl(select.img.toString())"
                 alt="Trainer" />
         </div>
         <div class="alert alert-danger" *ngIf="p.touched && p.invalid">
           image is required
         </div>
         <div style="display: flex; justify-content: space-between;"> 
-          <button class="button extra_button" style=" margin-left: 460px;margin-bottom: 50px;"    type="submit" (click)="save()">{{val}}</button>
+          <button class="button extra_button" style=" margin-left: 460px;margin-bottom: 50px;"  [disabled]="f.invalid ||q.minlength<8"  type="submit" (click)="save()">{{val}}</button>
    
         </div>
       </form>

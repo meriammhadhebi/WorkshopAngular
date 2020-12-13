@@ -39,11 +39,17 @@ export class AjoutCoursComponent implements OnInit {
     );
     this.registerForm = new FormGroup({
       nom : new FormControl('',[Validators.required]),
+      Duree :new FormControl('',[Validators.required]),
       Description : new FormControl('',[Validators.required]),
       capacite : new FormControl('',[Validators.required,Validators.min(0)]),
-      entraineur : new FormControl('',[Validators.required]),
-      img : new FormControl('',[Validators.required]),
       Intensite : new FormControl('',[Validators.required]),
+      Materiel : new FormControl('',[Validators.required]),
+      Frequence : new FormControl('',[Validators.required]),
+      grpMusculaire : new FormControl('',[Validators.required]),
+      Audiance : new FormControl('',[Validators.required]),
+      img : new FormControl(''),
+      tenue : new FormControl('',[Validators.required]),
+      entraineur : new FormControl('',[Validators.required]),
     });
     this.service.searchCours(this.id).subscribe(
       (select: Cours) => this.select = select
@@ -54,21 +60,27 @@ export class AjoutCoursComponent implements OnInit {
   }
 
   get nom(){return this.registerForm.get('nom');}
+  get Duree(){return this.registerForm.get('Duree');}
   get Description(){return this.registerForm.get('Description');}
   get capacite(){return this.registerForm.get('capacite');}
-  get entraineur(){return this.registerForm.get('entraineur');}
-  get img(){return this.registerForm.get('img');}
   get Intensite(){return this.registerForm.get('Intensite');}
+  get Materiel(){return this.registerForm.get('Materiel');}
+  get Frequence(){return this.registerForm.get('Frequence');}
+  get grpMusculaire(){return this.registerForm.get('grpMusculaire');}
+  get Audiance(){return this.registerForm.get('Audiance');}
+  get img(){return this.registerForm.get('img');}
+  get tenue(){return this.registerForm.get('tenue');}
+  get entraineur(){return this.registerForm.get('entraineur');}
   get form(){return this.registerForm;}
 
   save(){
-    if (this.val === 'edit')
+    if (this.val === 'Edit')
     {
     this.service.putCours(this.select).subscribe(
       ()=> console.log(this.select)
     );
     }
-    else
+    else(this.val === 'Add')
     {
       this.service.addCours(this.registerForm.value).subscribe(
         () => this.listCours = [this.registerForm.value, ...this.listCours]
