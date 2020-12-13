@@ -17,7 +17,7 @@
 
         </tr>
       </thead>
-      <tbody *ngFor="let c of listCours" >
+      <tbody *ngFor="let c of listCours| LockFilter: search" >
         <tr>
           <td>{{c.nom}}</td>
           <td>{{c.Description}}</td>

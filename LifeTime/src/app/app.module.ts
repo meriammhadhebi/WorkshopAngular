@@ -25,6 +25,7 @@ import { LoginComponent } from './login/login.component';
 import { CalculIMCComponent } from './calcul-imc/calcul-imc.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactComponent } from './contact/contact.component';
+import { SearchPipe } from './_pipe/search.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ContactComponent } from './contact/contact.component';
     LoginComponent,
     CalculIMCComponent,
     AboutusComponent,
-    ContactComponent
+    ContactComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
