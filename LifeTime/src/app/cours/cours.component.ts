@@ -25,4 +25,5 @@ export class CoursComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustUrl("assets/images/" + imageUrl.substring(12));
   }
 
+
 }

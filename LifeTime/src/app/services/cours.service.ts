@@ -26,4 +26,14 @@ export class CoursService {
   addCours(c: Cours) {
     return this.http.post(this.url, c);
   }
+  SearchMultiple(list:any[],critiria:string,value:any)
+  {
+    let listsearch : any[];
+    for(let i in list)
+    {
+      if(list[i][critiria]===value)
+      listsearch = [list[i], ...listsearch]
+    }
+    return listsearch;
+  }
 }

@@ -1,48 +1,45 @@
 
     <!-- Form -->
-<div class="Blog" style="margin:200px;">
+<div class="Blog" style="margin:200px;top: 100px;">
+  <h1>{{val}} Coach</h1>
   <div class="container" >
-    <div class="row">
-      <form  #f="ngForm">
-        <div class="form-group ">
+    <div >
+      <form  #f="ngForm" class="row">
+        <div class="form-group  col-xl-6 col-md-6" >
           <label>FirstName</label>
           <input type="text" name="id" class="form-control"  [(ngModel)]="select.nom" #i="ngModel" required>
         </div>
-        <div class="alert alert-danger" *ngIf="i.touched && t.invalid" >
-          A Name is required
+        <div class="alert alert-danger" *ngIf="i.touched && i.invalid" >
+         <div *ngIf="i.errors.required">FirstName is required</div>
         </div>
-        <div class="form-group">
+        <div class="form-group col-xl-6 col-md-6">
           <label>LastName</label>
-          <input type="text" name="title" class="form-control"  [(ngModel)]="select.prenom" required minlength="3" #t="ngModel" pattern="[a-zA-Z]+$">
+          <input type="text" name="title" class="form-control"  [(ngModel)]="select.prenom"  #t="ngModel" required>
         </div>
         <div class="alert alert-danger" *ngIf="t.touched && t.invalid">
-          <div *ngIf="t.errors.required"> description is required</div>
-          <div *ngIf="t.errors.minlength">title minlength is 3</div>
-          <div *ngIf="t.errors.pattern">enter a valid description</div>
+          <div *ngIf="t.errors.required"> LastName is required</div>
         </div>
-        <div class="form-group">
+        <div class="form-group col-xl-6 col-md-6">
           <label>phone </label>
-          <input type="number" name="phone" class="form-control"  [(ngModel)]="select.phone" #q="ngModel" required >
+          <input type="number" name="phone" class="form-control"  [(ngModel)]="select.phone" #q="ngModel" required minlength="8" maxlength="8"  >
         </div>
         <div class="alert alert-danger" *ngIf="q.touched && q.invalid">
-          quantity is required
+          <div *ngIf="q.errors.required">phone is required</div>
+          <div *ngIf="q.errors.minlength">phone length is 8</div>
+          <div *ngIf="q.errors.maxlength">phone length is 8</div>
         </div>
-        <div class="alert alert-danger" *ngIf="q.value<0 ">
-          quantity>0
-        </div>
-        <div class="form-group">
+        <div class="form-group col-xl-6 col-md-6">
           <label>image </label>
           <input #imageInput type="file" accept="image/*" name="img" class="form-control"  [(ngModel)]="select.img" #p="ngModel" required>
           <img *ngIf="val=='edit'" style="height: auto; width: 30%" [src]="sanitizeImageUrl(select.img.toString())"
-                alt="Game 1" />
+                alt="Trainer" />
         </div>
         <div class="alert alert-danger" *ngIf="p.touched && p.invalid">
           image is required
         </div>
         <div style="display: flex; justify-content: space-between;"> 
-        <button class="btn btn-success"  type="submit"   (click)="save()" >
-         {{val}}
-        </button>
+          <button class="button extra_button" style=" margin-left: 460px;margin-bottom: 50px;"    type="submit" (click)="save()">{{val}}</button>
+   
         </div>
       </form>
     </div>

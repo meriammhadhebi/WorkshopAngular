@@ -11,7 +11,8 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 export class AllcoursComponent implements OnInit {
 
   listCours : Cours[];
-  search : string;
+  @Input() search : string;
+  listsearch: Cours[];
   constructor(private service : CoursService,private sanitizer:DomSanitizer) { }
 
   ngOnInit(): void {
@@ -27,6 +28,11 @@ export class AllcoursComponent implements OnInit {
   }
   sanitizeImageUrl(imageUrl: string): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl("assets/images/" + imageUrl.substring(12));
+  }
+  searchfct()
+  {
+    this.listsearch= this.service.SearchMultiple(this.listCours,'nom',this.search);
+    console.log(this.listsearch);
   }
 
 }

@@ -10,6 +10,7 @@ import { AjoutentraineurComponent } from './ajoutentraineur/ajoutentraineur.comp
 import { AuthGuard } from './shared/guard/auth.guard';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactComponent } from './contact/contact.component';
+import { SearchComponent } from './search/search.component';
 
 
 const routes: Routes = [

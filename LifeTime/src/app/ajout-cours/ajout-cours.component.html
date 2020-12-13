@@ -25,6 +25,9 @@
                 <option value="" disabled>Intensite</option>
                 <option *ngFor="let Intensite of listintensite" [ngValue]="Intensite">{{Intensite}}</option>
             </select>
+            <div class="alert alert-danger" *ngIf="Intensite.errors && Intensite.touched ">
+                <div *ngIf="Intensite.errors.required"> the Intensite is required!</div>
+            </div>
         </div>
         <div class="form-group col-xl-6 col-md-6">
             <label>capacite : </label>
@@ -32,6 +35,7 @@
 
             <div class="alert alert-danger" *ngIf="capacite.errors && capacite.touched ">
                 <div *ngIf="capacite.errors.required"> the capacite is required!</div>
+                <div *ngIf="capacite.errors.min"> Capacite should be positive</div>
             </div>
         </div>
         <div class="form-group col-xl-6 col-md-6">
@@ -40,8 +44,8 @@
                 [(ngModel)]="select.img">
             <img *ngIf="val=='edit'" style="height: auto; width: 30%" [src]="sanitizeImageUrl(select.img.toString())"
                 alt="cours" />
-            <div class="alert alert-danger" *ngIf="capacite.errors && capacite.touched ">
-                <div *ngIf="capacite.errors.required"> the image is required!</div>
+            <div class="alert alert-danger" *ngIf="img.errors && img.touched ">
+                <div *ngIf="img.errors.required"> the image is required!</div>
             </div>
         </div>
         <div class="form-group col-xl-6 col-md-6">
@@ -51,8 +55,11 @@
                 <option *ngFor="let entraineur of listentraineur" [ngValue]="entraineur">{{entraineur.nom}}
                     {{entraineur.prenom}}</option>
             </select>
+            <div class="alert alert-danger" *ngIf="entraineur.errors && entraineur.touched ">
+                <div *ngIf="entraineur.errors.required"> the Trainer is required!</div>
+            </div>
         </div>
-        <button class="button extra_button" style="width: 20%; margin-left: 460px;margin-bottom: 50px;"  type="submit" (click)="save()">{{val}}</button>
+        <button class="button extra_button" style="width: 20%; margin-left: 460px;margin-bottom: 50px;"  [disabled]="registerForm.invalid"  type="submit" (click)="save()">{{val}}</button>
     </form>
     <p style="margin:200px"> </p>
 </div>

@@ -1,6 +1,6 @@
-<div class="row" style="margin: 200px;" > 
+<div class="row" style="margin: 200px;top: 100px;" > 
     <div class="col-md-12" > 
-      <a [routerLink]="['addentraineur','add']">Add New Coach</a>
+      <a [routerLink]="['addentraineur','Add']">Add New Coach</a>
         <br>
            <table class="table">
                <thead>
@@ -22,7 +22,7 @@
                    <td>{{e.phone}}</td>
 
                     <td>
-                   <button  class="btn btn-primary"  [routerLink]="['editentraineur',e.id,'edit']" >Edit </button>
+                   <button  class="btn btn-primary"  [routerLink]="['editentraineur',e.id,'Edit']" >Edit </button>
                    </td>
                    <td>
                    <button  class="btn btn-primary" (click)="delete(e.id)" >Delete </button>

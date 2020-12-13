@@ -40,7 +40,7 @@ export class AjoutCoursComponent implements OnInit {
     this.registerForm = new FormGroup({
       nom : new FormControl('',[Validators.required]),
       Description : new FormControl('',[Validators.required]),
-      capacite : new FormControl('',[Validators.required]),
+      capacite : new FormControl('',[Validators.required,Validators.min(0)]),
       entraineur : new FormControl('',[Validators.required]),
       img : new FormControl('',[Validators.required]),
       Intensite : new FormControl('',[Validators.required]),
