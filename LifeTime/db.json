@@ -1,56 +1,104 @@
 {
   "cours": [
     {
-      "id" : 1,
-      "Nom" : "Body Pump" ,
-      "Duree" : "1h30" ,
-      "Description" : "Le BodyPump est un cours de fitness à vocation de renforcement musculaire complet, pré-chorégraphié et en musique faisant partie du concept Body Training System" ,
-      "capacite" : 20 ,
-      "Intensite" : "Hard",
-      "img" : "../assets/images/blog_7.jpg"
+      "id": 1,
+      "nom": "Body Pump",
+      "Duree": "1h30",
+      "Description": "BODY PUMP ™ is for anyone looking to get lean, toned and fit – fast. Using light to moderate weights with lots of repetition, BODY PUMP gives you a total body workout. It will burn up to 590 calories. ... The Body Pump workout is incorporated into the weight maintenance workshops",
+      "capacite": 20,
+      "Intensite": "Hard",
+      "Materiel": "none",
+      "Frequence": "2 à 3 fois par semaine pour améliorer son agilité.1 jour de repos entre chaque entraînement.",
+      "grpMusculaire": " Corps complet",
+      "Audiance": "18..45 ans.Personne maitrisant la coordination facile.Personnes ayant déjà une bonne condition physique.Personnes aimant les grosses ambiances musicales",
+      "img": "C:\\fakepath\\a1.png",
+      "tenue": "Vêtements confortables et chaussures de sport",
+      "entraineur": {
+        "id": 3,
+        "nom": "Ahmed",
+        "prenom": "xyz",
+        "phone": "22066396",
+        "img": "../assets/images/team_3.jpg"
+      }
     },
     {
-      "id" : 2,
-      "Nom" : "Yoga" ,
-      "Duree" : "1h" ,
-      "Description" : "Le BodyPump est un cours de fitness à vocation de renforcement musculaire complet, pré-chorégraphié et en musique faisant partie du concept Body Training System" ,
-      "capacite" : 20  ,
-      "Intensite" : "Easy",
-      "img" : "../assets/images/blog_8.jpg"
+      "id": 2,
+      "nom": "Yoga",
+      "Duree": "1h",
+      "Description": "Yoga is a group of physical, mental, and spiritual practices or disciplines which originated in ancient India. Yoga is one of the six Āstika (orthodox) schools of Hindu philosophical traditions. There is a broad variety of yoga schools, practices, and goals[3] in Hinduism, Buddhism, and Jainism. The term Yoga in the Western world often denotes a modern form of hatha yoga and yoga as exercise, consisting largely of the postures or asanas.",
+      "capacite": 20,
+      "Intensite": "Easy",
+      "Materiel": "none",
+      "Frequence": "2 à 3 fois par semaine pour améliorer son agilité.1 jour de repos entre chaque entraînement.",
+      "grpMusculaire": " Corps complet",
+      "Audiance": "18..45 ans.Personne maitrisant la coordination facile.Personnes ayant déjà une bonne condition physique.Personnes aimant les grosses ambiances musicales",
+      "img": "C:\\fakepath\\blog_8.jpg",
+      "tenue": "Vêtements confortables et chaussures de sport"
     },
     {
-      "id" : 3,
-      "Nom" : "Box" ,
-      "Duree" : "1h30" ,
-      "Description" : "Le BodyPump est un cours de fitness à vocation de renforcement musculaire complet, pré-chorégraphié et en musique faisant partie du concept Body Training System" ,
-      "capacite" : 20 ,
-      "Intensite" : "Hard",
-      "img" : "../assets/images/blog_4.jpg"
+      "nom": "Pilates",
+      "Duree": "1h30",
+      "Description": "Pilates is a physical fitness system developed in the early 20th century by Joseph Pilates, after whom it was named. Pilates called his method Contrology. It is practiced worldwide, especially in Western countries such as Australia, Canada, the United States and the United Kingdom. As of 2005, there were 11 million people practicing the discipline regularly and 14,000 instructors in the United States.[3] Pilates developed in the aftermath of the late 19th century physical culture of exercising in order to alleviate ill health.",
+      "capacite": 20,
+      "Intensite": "Medium",
+      "Materiel": "none",
+      "Frequence": "2 à 3 fois par semaine pour améliorer son agilité.1 jour de repos entre chaque entraînement.",
+      "grpMusculaire": " Corps complet",
+      "Audiance": "18..45 ans.Personne maitrisant la coordination facile.Personnes ayant déjà une bonne condition physique.Personnes aimant les grosses ambiances musicales",
+      "img": "C:\\fakepath\\blog_10.jpg",
+      "tenue": "Vêtements confortables et chaussures de sport",
+      "entraineur": {
+        "id": 1,
+        "nom": "kamel",
+        "prenom": "qsd",
+        "phone": "22066396",
+        "img": "C:\\fakepath\\team_1.jpg"
+      },
+      "id": 7
     },
     {
-      "id" : 4,
-      "Nom" : "Pilates" ,
-      "Duree" : "1h30" ,
-      "Description" : "Le BodyPump est un cours de fitness à vocation de renforcement musculaire complet, pré-chorégraphié et en musique faisant partie du concept Body Training System" ,
-      "capacite" : 20 ,
-      "Intensite" : "Hard",
-      "img" : "../assets/images/blog_5.jpg"
-    },
-    {
-      "id" : 5,
-      "Nom" : "Cardio" ,
-      "Duree" : "1h30" ,
-      "Description" : "Le BodyPump est un cours de fitness à vocation de renforcement musculaire complet, pré-chorégraphié et en musique faisant partie du concept Body Training System" ,
-      "capacite" : 20 ,
-      "Intensite" : "Hard",
-      "img" : "../assets/images/blog_6.jpg"
+      "nom": "Cardio",
+      "Duree": "1h30",
+      "Description": "Cardiovascular fitness is a health-related component of physical fitness that is brought about by sustained physical activity. A person's ability to deliver oxygen to the working muscles is affected by many physiological parameters, including heart rate, stroke volume, cardiac output, and maximal oxygen consumption.Understanding the relationship between cardiorespiratory fitness and other categories of conditioning requires a review of changes that occur with increased aerobic, or anaerobic capacity. As aerobic/anaerobic capacity increases, general metabolism rises, muscle metabolism is enhanced, haemoglobin rises, buffers in the bloodstream increase, venous return is improved, stroke volume is improved, and the blood bed becomes more able to adapt readily to varying demands.",
+      "capacite": 20,
+      "Intensite": "Easy",
+      "Materiel": "none",
+      "Frequence": "2 à 3 fois par semaine pour améliorer son agilité.1 jour de repos entre chaque entraînement.",
+      "grpMusculaire": " Corps complet",
+      "Audiance": "18..45 ans.Personne maitrisant la coordination facile.Personnes ayant déjà une bonne condition physique.Personnes aimant les grosses ambiances musicales",
+      "img": "C:\\fakepath\\blog_11.jpg",
+      "tenue": "Vêtements confortables et chaussures de sport",
+      "entraineur": {
+        "id": 1,
+        "nom": "kamel",
+        "prenom": "qsd",
+        "phone": "22066396",
+        "img": "C:\\fakepath\\team_1.jpg"
+      },
+      "id": 8
     }
   ],
-  "comments": [
+  "entraineur": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "nom": "Amina",
+      "prenom": "khedher",
+      "phone": 22000396,
+      "img": "C:\\fakepath\\team_2.jpg"
+    },
+    {
+      "nom": "firas",
+      "prenom": "mhiri",
+      "phone": 22066000,
+      "img": "C:\\fakepath\\team_3.jpg",
+      "id": 3
+    },
+    {
+      "nom": "Ahmed",
+      "prenom": "mhadhebi",
+      "phone": 22066396,
+      "img": "C:\\fakepath\\team_1.jpg",
+      "id": 4
     }
   ],
   "profile": {
